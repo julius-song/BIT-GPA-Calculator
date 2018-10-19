@@ -62,7 +62,7 @@ $ python calculator.py
 requests >= 2.19.1
 ```
 
-## Author
+## Authors
 
 * **Junlin Song** - *Initial work* - [julius-song](https://github.com/julius-song)
 * **Hongyuan Ye** - *Windows localization* - [ensiwalk](https://github.com/ensiwalk)
