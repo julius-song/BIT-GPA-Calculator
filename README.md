@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Calculate GPA in total and in terms, aquired credits and grade percentage for students in BIT.
+Calculate GPA in total and in terms respectively, aquired credits and grade percentage for students in BIT.
 
 Examples:
 
@@ -21,37 +21,39 @@ Password:
 
 ------------------------------
 
-GPA: 92.225
+GPA: 91.690
 
-Total credits acquired: 129.0
+Credits acquired: 172.5
 
 ------------------------------
 
 Grade percentage:
 
-Excellent(score>=90): 70.18%
-Good(80<=score<90): 24.56%
-Fair(70<=score<80): 3.51%
-Pass(60<=score<70): 1.75%
-Fail(score<60): 0.00%
+Excellent (score>=90): 66.67%
+Good (80<=score<90): 25.00%
+Fair (70<=score<80): 4.17%
+Pass (60<=score<70): 4.17%
+Fail (score<60): 0.00%
 
 ------------------------------
 
 GPA of each term as followed:
 
-Term 1: 91.30
-Term 2: 91.39
-Term 3: 94.32
+Term 1: 91.13
+Term 2: 91.23
+Term 3: 94.45
 Term 4: 93.31
 Term 5: 90.50
 Term 6: 90.26
+Term 7: 86.13
+Term 8: 94.44
 
 ******************************
 ```
 
 ## Usage
 
-Run **'gpa_calculator.exe'** in Windows, or in Terminal (MacOS) run:
+Run **'calculator.exe'** in Windows, or in terminal run:
 
 ```
 $ python calculator.py
