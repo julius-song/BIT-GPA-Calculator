@@ -61,11 +61,16 @@ def parseScoreInfo(intr, score):
     for tr in intr:
         try:
             tds = tr('td')
-            course_info = {'score': float(tds[4].text), 'credit': float(tds[5].text)}
             course_term = tds[1].text
             # term = actual term - 1
             term = (int(course_term[:4]) - admission_year)*2 + int(course_term[-1]) - 1
+            course_info = {'score': float(tds[4].text), 'credit': float(tds[6].text)}
             score[term].append(course_info)
+        except ValueError:
+            mapping = {'优秀': 95, '良好': 85, '中等': 75, '合格': 60, '不合格': 0}
+            if tds[4].text in mapping:
+                course_info = {'score': float(mapping[tds[4].text]), 'credit': float(tds[6].text)}
+                score[term].append(course_info)            
         except:
             continue
 
@@ -177,14 +182,14 @@ if __name__ == '__main__':
         
         # Display results.  
         print('GPA: {:.3f}\n'.format(ave_all))
-        print('Total credits acquired: {}\n'.format(credit))
+        print('Credits acquired: {}\n'.format(credit))
         print('-'*30 + '\n')
         print('Grade percentage:\n')
-        print('''Excellent(score>=90): {:.2%}
-Good(80<=score<90): {:.2%}
-Fair(70<=score<80): {:.2%}
-Pass(60<=score<70): {:.2%}
-Fail(score<60): {:.2%}\n'''.format(grade['excellent']/count, grade['good']/count, grade['fair']/count, 
+        print('''Excellent (score>=90): {:.2%}
+Good (80<=score<90): {:.2%}
+Fair (70<=score<80): {:.2%}
+Pass (60<=score<70): {:.2%}
+Fail (score<60): {:.2%}\n'''.format(grade['excellent']/count, grade['good']/count, grade['fair']/count, 
                                 grade['pass']/count, grade['fail']/count))
         print('-'*30 + '\n')
         print('GPA of each term as followed:\n')
@@ -197,4 +202,4 @@ Fail(score<60): {:.2%}\n'''.format(grade['excellent']/count, grade['good']/count
     
     # Print tail.
     print('\n' + '*'*30 + '\n')
-    
+    print('repo: github.com/julius-song/BIT-GPA-Calculator' + '\n')
